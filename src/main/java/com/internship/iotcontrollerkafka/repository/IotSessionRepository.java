@@ -1,6 +1,6 @@
 package com.internship.iotcontrollerkafka.repository;
 
-import com.internship.iotcontrollerkafka.mapper.entity.IotSession;
+import com.internship.iotcontrollerkafka.entity.IotSession;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

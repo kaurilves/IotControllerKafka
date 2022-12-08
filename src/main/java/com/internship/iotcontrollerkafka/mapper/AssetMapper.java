@@ -2,7 +2,7 @@ package com.internship.iotcontrollerkafka.mapper;
 
 
 import com.internship.iotcontrollerkafka.dto.AssetDto;
-import com.internship.iotcontrollerkafka.mapper.entity.Asset;
+import com.internship.iotcontrollerkafka.entity.Asset;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
