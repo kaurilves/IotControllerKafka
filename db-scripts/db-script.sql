@@ -14,7 +14,7 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,N
 -- -----------------------------------------------------
 -- Schema iot_device_manager
 -- -----------------------------------------------------
-TRUNCATE SCHEMA IF EXISTS `iot_device_manager`;
+DROP SCHEMA IF EXISTS `iot_device_manager`;
 CREATE SCHEMA IF NOT EXISTS `iot_device_manager` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
 USE `iot_device_manager` ;
 

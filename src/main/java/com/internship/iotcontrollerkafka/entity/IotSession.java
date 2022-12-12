@@ -35,6 +35,5 @@ public class IotSession implements Serializable {
 
     @Column(name = "end_time")
     private LocalDateTime endTime;
-
 }
 

@@ -9,9 +9,9 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class IotSessionDto implements Serializable {
+public class DeviceConnectionResponse implements Serializable {
 
-    private Long sessionId;
+    private Long id;
 
 }
 

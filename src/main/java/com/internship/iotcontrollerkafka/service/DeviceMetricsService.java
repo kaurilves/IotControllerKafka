@@ -1,7 +1,7 @@
 package com.internship.iotcontrollerkafka.service;
 
 
-import com.internship.iotcontrollerkafka.dto.DeviceMetricsDto;
+import com.internship.iotcontrollerkafka.dto.MetricsRequest;
 import com.internship.iotcontrollerkafka.mapper.DeviceMetricsMapper;
 import com.internship.iotcontrollerkafka.entity.DeviceMetrics;
 import com.internship.iotcontrollerkafka.entity.IotSession;
@@ -21,11 +21,14 @@ public class DeviceMetricsService {
     @Autowired
     private IotSessionService iotSessionService;
 
-    public void save(Long id, DeviceMetricsDto deviceMetricsDto) throws Exception {
-        DeviceMetrics deviceMetrics = deviceMetricsMapper.toEntity(deviceMetricsDto);
-        IotSession iotSession = iotSessionService.findById(id);
-        deviceMetrics.setIotSession(iotSession);
-        deviceMetricsRepository.save(deviceMetrics);
+    public void save(MetricsRequest metricsRequest, Long sessionId) throws Exception {
+        DeviceMetrics deviceMetrics = deviceMetricsMapper.toEntity(metricsRequest);
+        deviceMetrics.setTimeStamp(metricsRequest.getTimeStamp());
+        IotSession iotSession = iotSessionService.findById(sessionId);
+        if (iotSession.getEndTime() == null) {
+            deviceMetrics.setIotSession(iotSession);
+            deviceMetricsRepository.save(deviceMetrics);
+        }
     }
 }
 

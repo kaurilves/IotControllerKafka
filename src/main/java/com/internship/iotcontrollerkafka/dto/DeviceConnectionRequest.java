@@ -1,4 +1,4 @@
-package com.internship.iotcontrollerkafka.dto.kafka;
+package com.internship.iotcontrollerkafka.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,10 +9,10 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class KafkaSimulatorMessage implements Serializable {
+public class DeviceConnectionRequest implements Serializable {
 
-    private Long deviceId;
     private Long machineId;
-    private Long sessionId;
+    private Long deviceId;
 
 }
+
